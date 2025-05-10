@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.header{
+    padding: 20px;
+    background-color: rgb(149, 153, 156);
+    box-shadow:0 4px 10px rgba(0, 0, 0, 0.5),0 2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    position: relative;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.logo img {
+    width: 80px;
+}
+
+
+.tren{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:100px;
+}
+.user:hover {
+    transform: scale(1.2);
+}
+.duoi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.menu li:hover {
+    transform: scale(1.2);
+    text-decoration: underline;
+}
+
+
+.timkiem {
+    border: 1px solid black;
+    border-radius: 25px;
+    height: 39px;
+    width: 335px;
+    background-color: white;
+    align-items: center;
+}
+.timkiem input {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    height: 30px;
+    width: 280px;
+    background-color: white;
+    outline: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.timkiem {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 40px;
+    background-color: white;
+    width: 335px;
+}
+
+.timkiem input {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 25px 0 0 25px;
+    font-size: 14px;
+    width: 280px;
+    background-color: white;
+}
+.search-btn {
+    background: white;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-btn:hover{
+    transform: scale(1.4);
+}
+.footer {
+    background-color:rgb(149, 153, 156);
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top-right-radius:30px ;
+    border-top-left-radius:30px ;
+    box-shadow:0 -4px 10px rgba(0, 0, 0, 0.5),0 -2px 4px rgba(0, 0, 0, 0.4);
+
+}
+.footer-container {
+    display: flex; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.footer-section {
+    max-width: 250px;
+} 
+.footer-section a p {
+    font-size: 14px;
+    color: #000000;
+}
+.footer-section img {
+    width: 25px;
+    margin: 5px;
+}
+
+
+.giohang:hover {
+    transform: scale(1.2);
+}
+
+.title {
+    border: 1px solid  rgb(240, 240, 240);
+    border-radius: 30px;
+    background-color: rgb(240, 240, 240);
+    box-shadow:0 4px 10px rgba(0, 0, 0, 0.5),0 2px 4px rgba(0, 0, 0, 0.4);
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 390px;
+    margin-right: 390px;
+    text-align: center;
+}
+.Product {
+    border: 1px solid  rgb(240, 240, 240);
+    border-radius: 30px;
+    background-color: rgb(240, 240, 240);
+    box-shadow:0 4px 10px rgba(0, 0, 0, 0.5),0 2px 4px rgba(0, 0, 0, 0.4);
+    width: auto;
+    height: auto;
+    margin: 20px;
+    display: flex;
+    padding: 30px;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.IMG {
+    border:none ;
+    border-radius: 25px;
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+}
+.IMG img {
+    width: 250px;
+}
+
+.Gach{
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 650px;
+    background:none;
+}
+table {
+    border: none;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.nut {
+    text-align: center;
+    margin-top: 20px;
+}
+.nut button{
+    font-weight: bold;
+    margin: 10px;
+    padding: 8px 20px;
+    border: 2px solid #2f3d8f;
+    cursor: pointer;
+}
+.nut button:hover {
+    transform: scale(1.2);
+}
+.mua {
+    background-color: #2f3d8f;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+}
+.them{
+    background-color: none;
+    color: #2f3d8f;
+    border-radius: 10px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+}

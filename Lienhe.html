@@ -1,0 +1,99 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cửa Hàng Táo | Giới Thiệu</title>
+        <link rel="stylesheet" type="text/css" href="CSS/Lienhe.css">
+        <link rel="icon" type="image/png" href="Img/apple1.png">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body class="body">
+        <header class="header">
+            <div class="tren">
+                <div class="logo">
+                    <a href="Trangchu.html">
+                        <img src="Img/apple2.png">
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="Trangchu.html"><b>Trang Chủ</b></a></li>|
+                        <li><a href="Sanpham.html"><b>Sản Phẩm</b></a></li>|
+                        <li><a href="Gioithieu.html"><b>Giới Thiệu</b></a></li>|
+                        <li><a href="Lienhe.html"><b>Liên Hệ</b></a></li>|
+                        <li><a href="Hotro.html"><b>Hỗ Trợ <i class="fa-solid fa-question"></i></b></a></li>
+                    </ul>
+                </div>
+                
+                <div class="user">
+                    <a href="Dangnhap.html">
+                        <i class="fa-solid fa-user" style="color: black; font-size: 30px;"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="duoi">
+                <div class="container">
+                    <div class="timkiem">
+                        <input type="text" placeholder="Tìm sản phẩm...">
+                        <button class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass" style="color: black;"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="giohang">
+                    <a href="Giohang.html">
+                        <i class="fa-solid fa-cart-shopping" style="color: black; font-size: 20px;"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div class="baner">
+            <div class="dong1">
+                <img src="Img/chulogo.jpg">
+            </div><br>
+            
+        </div>
+        <main class="main">
+            <section class="lien-he">
+                <h2>Liên hệ với chúng tôi</h2>
+                <form id="formLienHe">
+                    <label for="hoten">Họ và Tên:</label>
+                    <input type="text" id="hoten" name="hoten" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="sdt">Số điện thoại:</label>
+                    <input type="tel" id="sdt" name="sdt" pattern="[0-9]{10}" required>
+        
+                    <label for="noidung">Nội dung:</label>
+                    <textarea id="noidung" name="noidung" rows="5" required></textarea>
+        
+                    <button type="submit">Gửi</button>
+                    <p id="thongBao" class="thong-bao"></p>
+                </form>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Về Chúng Tôi</h3>
+                    <p>Chuyên cung cấp iPhone chính hãng với giá tốt nhất. Đảm bảo uy tín - chất lượng.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Hệ</h3>
+                    <p>📍 Địa chỉ: 06 Trần Văn Ơn, Phú Hoà, Thủ Dầu Một, Bình Dương</p>
+                    <p>📞 Hotline: 0987 654 321</p>
+                    <p>📧 Email: support@cuahangtao.vn</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kết Nối Với Chúng Tôi</h3>
+                    <a href="#"><img src="Img/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Img/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>

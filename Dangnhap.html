@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Táo | Đăng Nhập</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Dangnhap.css">
+    <link rel="icon" type="image/png" href="Img/apple1.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <main class="main2">
+        <form class="login" id="loginForm" action="/login" method="POST">
+            <a href="Trangchu.html" style="color: black; text-decoration: none;"><h1>ĐĂNG NHẬP</h1></a>
+            <label for="Email">Tài Khoản</label><br>
+            <input type="email" id="Email" name="email" placeholder="Nhập tài khoản hoặc email" required><br>
+
+            <label for="Password">Mật Khẩu</label><br>
+            <input type="password" id="Password" name="password" placeholder="Nhập mật khẩu" required><br>
+
+            <button class="nlogin" id="btnLogin" type="submit">ĐĂNG NHẬP</button><br>
+            <p>Bạn chưa có tài khoản? <a href="Dangky.html">Đăng ký ngay!</a></p>
+        </form>
+    </main>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            const email = document.getElementById('Email').value.trim();
+            const password = document.getElementById('Password').value.trim();
+
+            if (!email || !password) {
+                alert('Vui lòng nhập đầy đủ tài khoản và mật khẩu.');
+                event.preventDefault(); 
+            } else {
+                
+                console.log('Email:', email);
+                console.log('Password:', password);
+               
+            }
+        });
+    </script>
+</body>
+</html>

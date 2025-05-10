@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Táo | Đăng Ký</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Dangky.css">
+    <link rel="icon" type="image/png" href="Img/apple1.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <main class="main2">
+        <form class="login" id="registerForm" action="/register" method="POST">
+            <a href="Trangchu.html" style="color: black; text-decoration: none;"><h1>Đăng Ký</h1></a>
+
+            <label for="Email">Email</label><br>
+            <input type="email" id="Email" name="email" placeholder="Nhập email" required><br>
+
+            <label for="Phone">Số điện thoại</label><br>
+            <input type="tel" id="Phone" name="phone" placeholder="Nhập số điện thoại" required><br>
+
+            <label for="Password">Mật khẩu</label><br>
+            <input type="password" id="Password" name="password" placeholder="Nhập mật khẩu" required><br>
+
+            <label for="ConfirmPassword">Nhập lại mật khẩu</label><br>
+            <input type="password" id="ConfirmPassword" placeholder="Nhập lại mật khẩu" required><br>
+
+            <button class="nlogin" id="btnRegister" type="submit">ĐĂNG KÝ</button><br>
+        </form>
+    </main>
+    
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('Email').value.trim();
+        const phone = document.getElementById('Phone').value.trim();
+        const password = document.getElementById('Password').value;
+        const confirmPassword = document.getElementById('ConfirmPassword').value;
+
+        if (!email || !phone || !password || !confirmPassword) {
+            alert('Vui lòng nhập đầy đủ thông tin.');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Mật khẩu và xác nhận mật khẩu không khớp.');
+            return;
+        }
+
+        const user = {
+            email: email,
+            phone: phone,
+            password: password
+        };
+
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+
+        const existedUser = users.find(u => u.email === email);
+        if (existedUser) {
+            alert('Email này đã được đăng ký.');
+            return;
+        }
+
+        users.push(user);
+        localStorage.setItem('users', JSON.stringify(users));
+
+        alert('Đăng ký thành công!');
+        window.location.href = 'Dangnhap.html'; 
+    });
+</script>
+
+</body>
+</html>

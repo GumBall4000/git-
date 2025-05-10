@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cửa Hàng Táo | Giỏ hàng</title>
+  <link rel="stylesheet" type="text/css" href="CSS/Giohang.css">
+  <link rel="icon" type="image/png" href="Img/apple1.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <header class="header">
+      <div class="tren">
+          <div class="logo">
+              <a href="Trangchu.html">
+                  <img src="Img/apple2.png">
+              </a>
+          </div>
+          <div class="menu">
+              <ul>
+                  <li><a href="Trangchu.html"><b>Trang Chủ</b></a></li>|
+                  <li><a href="Sanpham.html"><b>Sản Phẩm</b></a></li>|
+                  <li><a href="Gioithieu.html"><b>Giới Thiệu</b></a></li>|
+                  <li><a href="Lienhe.html"><b>Liên Hệ</b></a></li>|
+                  <li><a href="Hotro.html"><b>Hỗ Trợ <i class="fa-solid fa-question"></i></b></a></li>
+              </ul>
+          </div>
+          
+          <div class="user">
+              <a href="Dangnhap.html">
+                  <i class="fa-solid fa-user" style="color: black; font-size: 30px;"></i>
+              </a>
+          </div>
+      </div>
+      <div class="duoi">
+          <div class="container">
+              <div class="timkiem">
+                  <input type="text" placeholder="Tìm sản phẩm...">
+                  <button class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass" style="color: black;"></i>
+                  </button>
+                </div>
+          </div>
+          <div class="giohang">
+              <a href="Giohang.html">
+                  <i class="fa-solid fa-cart-shopping" style="color: black; font-size: 20px;"></i>
+              </a>
+          </div>           
+      </div>
+  </header>
+  </header>
+
+  <!-- Main Content -->
+  <main class="cart-container">
+    <div class="main1">
+      <h2>Giỏ hàng của bạn</h2>
+      <div id="cart-items"></div>
+      <div class="total">Tổng: <span id="cart-total">0 VNĐ</span></div>
+    </div>
+    <div class="main2">
+      <div class="checkout-form">
+        <h3>Thông tin người nhận</h3>
+        <input type="text" placeholder="Họ và tên" id="fullname" required>
+        <input type="text" placeholder="Số điện thoại" id="phone" required>
+        <textarea placeholder="Địa chỉ giao hàng" id="address" required></textarea>
+        <button onclick="checkout()">Thanh toán</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Về Chúng Tôi</h3>
+            <p>Chuyên cung cấp iPhone chính hãng với giá tốt nhất. Đảm bảo uy tín - chất lượng.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Liên Hệ</h3>
+            <p>📍 Địa chỉ: 06 Trần Văn Ơn, Phú Hoà, Thủ Dầu Một, Bình Dương</p>
+            <p>📞 Hotline: 0987 654 321</p>
+            <p>📧 Email: support@cuahangtao.vn</p>
+        </div>
+        <div class="footer-section">
+            <h3>Kết Nối Với Chúng Tôi</h3>
+            <a href="#"><img src="Img/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="Img/youtube.png" alt="YouTube"></a>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      const cartCount = document.getElementById('cart-count');
+
+      cartItems.innerHTML = '';
+      let total = 0;
+      let count = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+        count += item.quantity;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+        itemDiv.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <p>Giá: ${item.price.toLocaleString()}VNĐ</p>
+            <p>Số lượng: ${item.quantity}</p>
+          </div>
+          <button onclick="removeItem(${index})">Xóa</button>
+        `;
+        cartItems.appendChild(itemDiv);
+      });
+
+      cartTotal.innerText = total.toLocaleString() + 'VNĐ';
+      cartCount.innerText = count;
+    }
+
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function checkout() {
+      const name = document.getElementById('fullname').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      if (!name || !phone || !address) {
+        alert("Vui lòng điền đầy đủ thông tin!");
+        return;
+      }
+
+      alert(`Cảm ơn bạn ${name}! Đơn hàng đã được ghi nhận.`);
+      localStorage.removeItem('cart');
+      renderCart();
+    }
+
+    
+    renderCart();
+  </script>
+</body>
+</html>
