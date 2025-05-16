@@ -98,6 +98,7 @@
   <script>
     function renderCart() {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
       const cartItems = document.getElementById('cart-items');
       const cartTotal = document.getElementById('cart-total');
       const cartCount = document.getElementById('cart-count');

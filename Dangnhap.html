@@ -11,7 +11,7 @@
 </head>
 <body>
     <main class="main2">
-        <form class="login" id="loginForm" action="/login" method="POST">
+        <form class="login" id="loginForm" action="#" method="POST">
             <a href="index.html" style="color: black; text-decoration: none;"><h1>ĐĂNG NHẬP</h1></a>
             <label for="Email">Tài Khoản</label><br>
             <input type="email" id="Email" name="email" placeholder="Nhập tài khoản hoặc email" required><br>
@@ -24,20 +24,32 @@
         </form>
     </main>
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            const email = document.getElementById('Email').value.trim();
-            const password = document.getElementById('Password').value.trim();
 
-            if (!email || !password) {
-                alert('Vui lòng nhập đầy đủ tài khoản và mật khẩu.');
-                event.preventDefault(); 
-            } else {
-                
-                console.log('Email:', email);
-                console.log('Password:', password);
-               
-            }
-        });
-    </script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        
+        const email = document.getElementById("Email").value.trim();
+        const password = document.getElementById("Password").value.trim();
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+const foundUser = users.find(u => u.email === email && u.password === password);
+
+if (foundUser) {
+    alert("Đăng nhập thành công!");
+    window.location.href = "index.html";
+} else {
+    alert("Tài khoản hoặc mật khẩu không đúng!");
+}
+
+        if (email === fakeUser.email && password === fakeUser.password) {
+            alert("Đăng nhập thành công!");
+
+            window.location.href = "index.html";
+        } else {
+            alert("Tài khoản hoặc mật khẩu không đúng!");
+        }
+    });
+</script>
 </body>
 </html>
